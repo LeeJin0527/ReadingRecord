@@ -27,6 +27,6 @@ MyBatis를 이용하는 경우에는 SQL을 위해서 전달되는 객체는 모
 어떤 변화가 일어나는 것을 감지하는 **리스너**가 있습니다.
 
 JPA내부에서 엔티티 객체가 생성/변경되는 것을 감지하는 역할은 AuditingEntityListener로 이루어집니다. 
-이를 사용하기 위해서 메인 메소드에 @EnableJpaAuditing 추가
+이를 사용하기 위해서 메인 메소드에 **@EnableJpaAuditing** 추가
 
 
