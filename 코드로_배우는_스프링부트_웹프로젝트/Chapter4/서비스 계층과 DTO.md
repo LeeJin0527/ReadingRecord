@@ -1,6 +1,6 @@
 p.150
 
-[code](https://github.com/LeeJin0527/guestbook/tree/master/src/main/java/com/example/guestbook)
+[code](https://github.com/LeeJin0527/guestbook/tree/master/src/main/java/com/example/guestbook/service)
 
 엔티티 객체를 영속 계층 바깥쪽에서 사용하는 방식 보다는 **DTO**를 이용하는 방식을 권장합니다. 
 DTO는 엔티티 객체와 달리 **각 계층끼리 주고받는 우편물이나 상자의 개념**입니다. 순수하게 데이터를 담고 있다는 점에서는 엔티티 객체와 유사하지만, 목적 자체가 데이터의 전달이므로 **읽고, 쓰는 것이 모두 허용되는 점**
