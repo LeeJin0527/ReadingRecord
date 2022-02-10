@@ -12,6 +12,7 @@ Querydsl의 사용법은 다음과 같습니다.
 - BooleanBuilder에 작성된 Predicate를 추가하고 실행합니다. 
 
 ```java
+// 단일 항목 테스트 
 //'title'로 검색
     @Test
     public void testQuery1(){
