@@ -1,4 +1,8 @@
 p.145
+
+[code](https://github.com/LeeJin0527/guestbook/blob/master/src/test/java/com/example/guestbook/repository/GuestbookRepositoryTest.java)
+
+
 본격적으로 Querydsl 의 실습은 다음과 같은 상황을 처리합니다 
 - 제목/ 내용/ 작성자 와 같이 단 하나의 항목으로 검색하는 경우 
 - '제목+내용' / '내용+ 작성자' / '제목+ 작성자'와 같이 2개의 항목으로 검색하는 경우 
