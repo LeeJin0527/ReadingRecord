@@ -11,3 +11,28 @@ p.241
 **JPA에서 연관관계의 데이터를 어떻게 가져올 것인가를 fetch(패치)** 라고 하는데 연관관계의 어노테이션 속성으로 'fetch'모드를 지정합니다. 
 
 '즉시로딩'은 불필요한 조인까지 처리해야하는 경우가 많기 때문에 가능하면 사용하지 않고 그와 반대되는 개념으로 'Lazy loading'으로 처리합니다.
+
+Guestbook (책에서는 Board)클래스에서ㅏ fetch속성을 지연로딩으로 적용하고 testRead1()을 실행하면 이전 실행 결과와 달리 예외가 발생합니다. 
+예외 메시지는  could not initialize proxy [com.example.guestbook.entity.Member#user100aaa.com] - no Session
+데이터베이스와 추가적인 연결이 필요하다는 것.
+지연로딩 방식으로 로딩하기 때문에 Guestbook테이블만을 가져와서 프린트 하는것은 문제 없지만 guestbook.getWriter()에서 문제 발생 
+guestbook.getWriter()는 member 테이블을 로딩해야하는데 이미 데이터베이스와의 연결은 끝난 상태이기 때문이다.
+이때 필요한것이 **@Transactional **
+다시 한번 데이터베이스와의 연결을 해줌 
+```java
+ @ManyToOne(fetch = FetchType.LAZY)
+    private Member writer;
+
+```
+
+
+```java
+    @Transactional
+    @Test
+    public void testRead1(){
+        Optional<Guestbook> result = guestbookRepository.findById(100L);
+        Guestbook guestbook  = result.get();
+        System.out.println(guestbook);
+        System.out.println(guestbook.getWriter());
+    }
+```
